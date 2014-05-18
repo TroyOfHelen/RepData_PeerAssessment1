@@ -1,0 +1,30 @@
+a <- "downloads\\repdata-data-activity\\activity.csv"
+b <- read.csv(a)
+str(b)
+hist(b$steps)
+hist(as.numeric(b$date))
+hist(b$interval)
+str(as.numeric(b$date))
+str(as.Date(b$date))
+d <- as.Date(b$date)
+hist(d,breaks=d[c(10000,20000,30000)])
+quantile(d)
+d <- as.POSIXlt(b$date)
+b$date = as.Date(b$date)
+summary(b)
+
+## What is mean total number of steps taken per day?
+
+hist(b$steps) # this is per 5 minute interval
+# I need to stratify the data by date
+hist(b$steps,breaks=b$date)
+e <- xtabs(steps~date,data=b)
+plot(e)
+hist(e)  # this works
+
+library(ggplot2)
+
+
+mean(e)
+median(e)
+
