@@ -1,6 +1,3 @@
-## Assignment 1 Location
-Open Assignment 1.Rmd to see the sourcecode of Assignment 1.html, my work for assignment 1.
-
 ## Introduction
 
 It is now possible to collect a large amount of data about personal
